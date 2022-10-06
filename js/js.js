@@ -1,5 +1,5 @@
 const dato = document.getElementById("dato");
-const footer = document.getElementsByTagName("footer")[0];
+const info = document.getElementById("info");
 
 dato.onkeydown = ev => {
     if (ev.key === ' ' || ev.key.length !== 1) return;
@@ -10,10 +10,10 @@ dato.onkeydown = ev => {
 
     let value = String.fromCharCode(parseInt(upperCase.charCodeAt(0) + "e8",16));
     ev.target.value += value;
-    footer.innerHTML += "<p>tipo=" + ev.type + " key=" + ev.key + " fromCharCode="+value+"</p>";
+    info.innerHTML = "<p>TIPO=" + ev.type + " TECLA=" + ev.key + " LETRA="+value+"</p>" + info.innerHTML;
 }
 
 function reiniciar() {
     dato.value = "";
-    footer.innerHTML = "";
+    info.innerHTML = "";
 }
